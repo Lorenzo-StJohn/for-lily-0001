@@ -1,5 +1,6 @@
 let imgSrc = document.getElementById('img-src');
 let textSrc = document.getElementById('text-src');
+let result = document.getElementById('result');
 let button = document.getElementById('button');
 let str, temp, res, text, p;
 
@@ -13,12 +14,17 @@ const generate = () => {
 				temp += str[i];
 				i += 1;
 			}
-			res = `<div class="gift"><img src="${temp}" width="55" alt="${text}"  title="${text}"></div>`;
+			res = `<div class="gift"><img src="${temp}" width="55" alt="${text}"  title="${text}"></div>\n`;
 			p = document.createElement('p');
-			p.innerText = res;
-			document.body.appendChild(p);
+			p.textContent = res;
+			result.appendChild(p);
 		}
-	}
+	}	
+	navigator.clipboard.writeText(result.textContent)
+	.then(() => console.log("Done!"))
+	.catch(err => console.error(err))
 }
+
+
 
 button.addEventListener('click', generate);
