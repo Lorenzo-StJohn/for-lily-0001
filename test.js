@@ -5,6 +5,7 @@ let button = document.getElementById('button');
 let str, temp, res, text, p;
 
 const generate = () => {
+	result.innerText = '';
 	str = imgSrc.value;
 	text = textSrc.value;
 	for (let i = 5; i < str.length; i += 1) {
