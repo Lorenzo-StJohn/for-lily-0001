@@ -12,36 +12,48 @@
       <code>.env</code> file).
     </blockquote>
     <hr>
-<h2 id="github-workflow">🏍️ Порядок работы c репозиторием</h2>
-Для работа с данным репозиторием необходимо:
-<br><br>
-
-1. Склонировать данный репозиторий к себе на компьютер при помощи команды:
-
-<code>git clone git@github.com:godlikeAlex/surron-ecommerce.git</code>
-
-2.  Перейти в папку проекта:
-
-<code>cd surron-ecommerce</code>
-
-3. Установить все необходимые зависимости:
-
-<code>npm i</code>
-
-4. Добавить папку с настройками для husky для корректной проверки возможных будущих коммитов:
-
-<code>npm run prepare</code>
-
-5. Перейти в интересующую ветку проекта, например, develop:
-
-<code>git checkout develop</code>
-
-6. Найти в проекте файл, называющийся <code>.env.example</code>, переименовать его в <code>.env</code> и заполнить значения соответствующих переменных в файле данными, полученными в CommerceTools.
-
-7. Запустить проект (указан вариант запуска в режиме разработчика, с другими вариантами запуска можно ознакомиться в разделе [скрипты](#scripts-section)):
-
-<code>npm run dev</code> 
-<hr>
+<h2 id="github-workflow">🏍️ How to work with the repository</h2>
+ To work with this repository you need:
+    <br><br>
+    <ol>
+      <li>
+        Clone this repository to your computer using the command:
+        <br><code
+          >git clone git@github.com:godlikeAlex/surron-ecommerce.git</code
+        >
+      </li>
+      <li>
+        Go to the project folder:
+        <br><code>cd surron-ecommerce</code>
+      </li>
+      <li>
+        Install all necessary dependencies:
+        <br><code>npm i</code>
+      </li>
+      <li>
+        Add a folder with settings for husky to correctly check possible future
+        commits:
+        <br><code>npm run prepare</code>
+      </li>
+      <li>
+        Go to the branch of the project you are interested in, for example,
+        develop:
+        <br><code>git checkout develop</code>
+      </li>
+      <li>
+        Find a file in the project called <code>.env.example</code>, copy it,
+        rename the created copy to <code>.env</code> and fill in the values of
+        the corresponding variables in the file with the data obtained in
+        CommerceTools.
+      </li>
+      <li>
+        Launch the project (the developer mode launch option is specified, other
+        launch options can be found in the [scripts section]
+        (#scripts-section):
+        <br><code>npm run dev</code>
+      </li>
+    </ol>
+    <hr>
 <h2 id="used-stack">🏍️ Используемые технологии</h2>
 При работе над данным проектом были использованы:
 <br><br>
