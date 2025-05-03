@@ -1,3 +1,4 @@
+@Lorenzo-StJohn
 <h1 id="heading">🏍️🏍️🏍️ surron-ecommerce</h1>
 Добро пожаловать в репозиторий учебного проекта «surron-ecommerce», созданного в рамках прохождения курса «JavaScript / Front-end Course» в RS School. Цель данного проекта — научиться работе с CommerceTools, освоить все необходимые для этого технологии и получить опыт работы в команде.
 <br><br>
