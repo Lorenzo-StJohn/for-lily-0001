@@ -130,17 +130,32 @@
       list of files that do not match the required formatting.
     </li>
     <hr>
-<h2 id="team-section">🏍️ Useful scripts for working on the project</h2>
-    <li>
-      <b>[@Lorenzo-StJohn] (https://github.com/lorenzo-stjohn)</b> — Svetlana
-      Arzamastceva, an RS School student
+<h2 id="team-section">🏍️ Worked on the project</h2>
+   <li>
+      <a
+        href="https://github.com/lorenzo-stjohn"
+        target="_blank"
+        rel="noopener noreferrer"
+        ><b>@Lorenzo-StJohn</b></a
+      >
+      — Svetlana Arzamastceva, an RS School student
     </li>
     <li>
-      <b>[@Milena-Belianova] (https://github.com/milena-belianova)</b> — Milena
-      Belianova, an RS School student
+      <a
+        href="https://github.com/milena-belianova"
+        target="_blank"
+        rel="noopener noreferrer"
+        ><b>@Milena-Belianova</b></a
+      >
+      — Milena Belianova, an RS School student
     </li>
     <li>
-      <b>[@godlikeAlex] (https://github.com/godlikealex)</b> — Aleksandr
-      Yurkovskiy, an RS School student
+      <a
+        href="https://github.com/godlikealex"
+        target="_blank"
+        rel="noopener noreferrer"
+        ><b>@godlikeAlex</b></a
+      >
+      — Aleksandr Yurkovskiy, an RS School student
     </li>
-<h2 id="scripts-section">🏍️ Useful scripts for working on the project</h2>
+    <hr>
