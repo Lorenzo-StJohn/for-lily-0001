@@ -48,8 +48,7 @@
       </li>
       <li>
         Launch the project (the developer mode launch option is specified, other
-        launch options can be found in the [scripts section]
-        (#scripts-section):
+        launch options can be found in the <a href="#scripts-section">scripts section</a>:
         <br><code>npm run dev</code>
       </li>
     </ol>
