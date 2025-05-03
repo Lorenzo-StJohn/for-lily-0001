@@ -53,23 +53,42 @@
       </li>
     </ol>
     <hr>
-<h2 id="used-stack">🏍️ Используемые технологии</h2>
-При работе над данным проектом были использованы:
-<br><br>
-
-<li> <b>Typescript</b> — инструмент, расширяющий возможности JavaScript благодаря статической типизации.</li>
-<li> <b>React</b> — одна из самым популярных фронтенд-библиотек.
-<li> <b>Vite</b> — инструмент для настройки среды разработки и сборки проекта.</li>
-<li> <b>React-router</b> — библиотека для навигации между разными частями веб-приложения, созданными при помощи React.</li>
-<li> <b>Vitest</b> — одна из самых популярных сред тестирования на базе Vite.</li>
-<li> <b>Eslint</b> — инструмент статического анализа кода.</li>
-<li> <b>Husky</b> — инструмент для автоматической проверки коммитов.</li>
-<li> <b>Prettier</b> — инструмент для автоматического форматирования кода.</li>
-<li> <b>Zustand</b> — популярная библиотека для управления состоянием React-приложений.</li>
-<li> <b>Mantine UI</b> — популярный фреймворк для создания пользовательского интерфейса на основе React.</li>
-<li> <b>React Hook Form</b> — библиотека для работы с формами в React-приложениях.</li>
-<li> <b>TanStack Query</b> — библиотека для выполнения запросов данных и управления состоянием приложения на основе GraphQL.</li>
-<hr>
+<h2 id="used-stack">🏍️ Technology stack used</h2>
+ When working on this project the following were used:
+    <br><br>
+    <li>
+      <b>Typescript</b> — tool that extends the capabilities of JavaScript
+      through static typing.
+    </li>
+    <li><b>React</b> — one of the most popular frontend libraries.</li>
+    <li>
+      <b>Vite</b> — tool for configuring the development environment and
+      building a project.
+    </li>
+    <li>
+      <b>React-router</b> — library for navigating between different parts of a
+      web application created using React.
+    </li>
+    <li><b>Vitest</b> — modern unit testing framework powered by Vite.</li>
+    <li>
+      <b>Eslint</b> — static code analysis tool for identifying problematic
+      patterns found in Javascript/Typescript code.
+    </li>
+    <li>
+      <b>Husky</b> — popular Git hook tool that makes sure to format and fix
+      code before committing.
+    </li>
+    <li><b>Prettier</b> — opinionated code formatter.</li>
+    <li><b>Zustand</b> — popular state management library.</li>
+    <li><b>Mantine UI</b> — popular React component library.</li>
+    <li>
+      <b>React Hook Form</b> — one of the most popular React form library.
+    </li>
+    <li>
+      <b>TanStack Query</b> — popular library for managing server state in React
+      applications.
+    </li>
+    <hr>
 <h2 id="scripts-section">🏍️ Полезные скрипты для работы над проектом</h2>
 При работе над проектом вам могут пригодиться следующие скрипты:
 <br><br>
