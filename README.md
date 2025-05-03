@@ -89,18 +89,44 @@
       applications.
     </li>
     <hr>
-<h2 id="scripts-section">🏍️ Полезные скрипты для работы над проектом</h2>
-При работе над проектом вам могут пригодиться следующие скрипты:
-<br><br>
-<li> <b>dev</b> — запуск проекта в режиме разработчика.</li>
-<li> <b>build</b> — сборка готовой версии проекта.</li>
-<li> <b>test</b> — прогон тестов Vitest с выводом результатов в консоль.</li>
-<li> <b>test:watch</b> — запуск тестов Vitest в режим watching с выводом результатом в отдельную вкладку браузера.</li>
-<li> <b>coverage</b> — прогон тестов Vitest с выводом результатов и таблицы покрытия тестами в консоль.</li>
-<li> <b>coverage:watch</b> — запуск тестов Vitest в режим watching с выводом результатов и таблицы покрытия тестами в отдельную вкладку браузера.</li>
-<li> <b>lint</b> — проверка всего написанного в проекте кода инструментом статического анализа кода eslint.</li>
-<li> <b>preview</b> — запуск просмотра предварительно собранной (при помощи скрипта <b>build</b>)версии проекта.</li>
-<li> <b>prepare</b> — добавления настроек для husky, инструмента для автоматической проверки коммитов.</li>
-<li> <b>format</b> — запуск автоматического форматирования всего написанного в проекте кода инструментом для форматирования prettier с выводом списка файлов, к которым было применено форматирование.</li>
-<li> <b>ci:format</b> — проверка всего написанного в проекте кода инструментом для форматирования prettier с выводом списка файлов, не соответствующих требуемому форматированию.</li>
-<hr>
+<h2 id="scripts-section">🏍️ Useful scripts for working on a project</h2>
+  The following scripts may be useful to you when working on the project:
+    <br><br>
+    <li><b>dev</b> — launch the app in developer mode.</li>
+    <li><b>build</b> — build the app for production</li>
+    <li>
+      <b>test</b> — run Vitest tests with output of results to the console.
+    </li>
+    <li>
+      <b>test:watch</b> — run Vitest tests in watching mode with the output of
+      result in a separate browser tab.
+    </li>
+    <li>
+      <b>coverage</b> — run Vitest tests with the output of results and the test
+      coverage table to the console.
+    </li>
+    <li>
+      <b>coverage:watch</b> — run Vitest tests in watching mode with the output
+      of result and the test coverage table in a separate browser tab.
+    </li>
+    <li>
+      <b>lint</b> — check the entire code base with eslint, the static code
+      analysis tool.
+    </li>
+    <li>
+      <b>preview</b> — launch viewing of a pre-built (using the
+      <b>build</b> script) version of the app.
+    </li>
+    <li>
+      <b>prepare</b> — add settings for husky, the tool for automatically
+      checking commits.
+    </li>
+    <li>
+      <b>format</b> — start automatic formatting of the entire code base with
+      prettier and display a list of files to which formatting has been applied.
+    </li>
+    <li>
+      <b>ci:format</b> — check the entire code base with prettier and display a
+      list of files that do not match the required formatting.
+    </li>
+    <hr>
