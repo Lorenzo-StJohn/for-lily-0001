@@ -89,7 +89,7 @@
       applications.
     </li>
     <hr>
-<h2 id="scripts-section">🏍️ Useful scripts for working on a project</h2>
+<h2 id="scripts-section">🏍️ Useful scripts for working on the project</h2>
   The following scripts may be useful to you when working on the project:
     <br><br>
     <li><b>dev</b> — launch the app in developer mode.</li>
@@ -130,3 +130,17 @@
       list of files that do not match the required formatting.
     </li>
     <hr>
+<h2 id="team-section">🏍️ Useful scripts for working on the project</h2>
+    <li>
+      <b>[@Lorenzo-StJohn] (https://github.com/lorenzo-stjohn)</b> — Svetlana
+      Arzamastceva, an RS School student
+    </li>
+    <li>
+      <b>[@Milena-Belianova] (https://github.com/milena-belianova)</b> — Milena
+      Belianova, an RS School student
+    </li>
+    <li>
+      <b>[@godlikeAlex] (https://github.com/godlikealex)</b> — Aleksandr
+      Yurkovskiy, an RS School student
+    </li>
+<h2 id="scripts-section">🏍️ Useful scripts for working on the project</h2>
