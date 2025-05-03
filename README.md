@@ -131,6 +131,7 @@
     </li>
     <hr>
 <h2 id="team-section">🏍️ Worked on the project</h2>
+The following people worked on this project:
    <li>
       <a
         href="https://github.com/lorenzo-stjohn"
