@@ -27,6 +27,11 @@
         <br><code>cd surron-ecommerce</code>
       </li>
       <li>
+        Go to the branch of the project you are interested in, for example,
+        develop:
+        <br><code>git checkout develop</code>
+      </li>
+      <li>
         Install all necessary dependencies:
         <br><code>npm i</code>
       </li>
@@ -34,11 +39,6 @@
         Add a folder with settings for husky to correctly check possible future
         commits:
         <br><code>npm run prepare</code>
-      </li>
-      <li>
-        Go to the branch of the project you are interested in, for example,
-        develop:
-        <br><code>git checkout develop</code>
       </li>
       <li>
         Find a file in the project called <code>.env.example</code>, copy it,
@@ -81,9 +81,6 @@
     <li><b>Prettier</b> — opinionated code formatter.</li>
     <li><b>Zustand</b> — popular state management library.</li>
     <li><b>Mantine UI</b> — popular React component library.</li>
-    <li>
-      <b>React Hook Form</b> — one of the most popular React form library.
-    </li>
     <li>
       <b>TanStack Query</b> — popular library for managing server state in React
       applications.
