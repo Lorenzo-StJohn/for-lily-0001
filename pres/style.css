@@ -25,6 +25,7 @@ body {
 
 img {
   border-radius: 10px;
+  object-fit: contain;
 }
 
 a h1 {
