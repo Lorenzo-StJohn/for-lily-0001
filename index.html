@@ -3,30 +3,231 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gift Generator</title>
+    <title>useBike()</title>
+    <link rel="stylesheet" href="style.css">
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="./assets/icons/apple-touch-icon.png"
+    >
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/icons/favicon-32x32.png"
+    >
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./assets/icons/favicon-16x16.png"
+    >
+    <link rel="manifest" href="./assets/icons/site.webmanifest">
+    <link
+      type="image/x-icon"
+      href="./assets/icons/favicon.ico"
+      rel="shortcut icon"
+    >
+    <link type="image/x-icon" href="./assets/icons/favicon.ico" rel="mask-icon">
   </head>
-  <style>
-	* {
-		margin: 10px;
-		padding: 10px;
-	}
-	#img-src {
-		width: calc(100% - 20px);
-		height: 200px;
-		overflow: auto;
-	}
-	#text-src {
-		width: calc(100% - 20px);
-		height: 100px;
-		overflow: auto;
-	}
-  </style>
-  <body id="body" type="JS">
-	HTML с картинками:
-	<textarea name="" id="img-src"></textarea>
-	Текст:
-	<textarea name="" id="text-src"></textarea>
-	<button id="button">Generate</button>
-    <script src="test.js"></script>
+  <body>
+    <a target="_blank" href="https://sprint4--ecommerce-surron.netlify.app"
+      ><h1>🏍️ команда useBike() 🏍️</h1></a
+    >
+    <div class="card">
+      <p>чем ближе к финалу — тем активнее крутим педали</p>
+      <img src="./assets/img/1.png" width="75%">
+    </div>
+    <div class="card">
+      <p>мы не ищем лёгких путей</p>
+      <img src="./assets/img/2.png" width="75%">
+    </div>
+    <div class="card">
+      <p>если не делать на максимум, нечего и начинать</p>
+      <img src="./assets/img/3.png" width="75%">
+    </div>
+    <div class="card">
+      <p>
+        это был хороший таск, за четыре спринта хотелось всё бросить всего лишь
+        два раза
+      </p>
+      <img src="./assets/img/5.png" width="75%">
+      <br>
+      <img src="./assets/img/4.png" width="75%">
+    </div>
+    <div class="card">
+      <p>всегда найдётся кто-то, кто разбирается в проблеме лучше</p>
+      <img src="./assets/img/6.png" width="75%">
+      <br>
+      <img src="./assets/img/7.png" width="75%">
+      <br>
+      <img src="./assets/img/8.png" width="75%">
+    </div>
+    <div class="card">
+      <h2>нас не просили, а мы сделали...</h2>
+      <p>🏍️ мердж корзин</p>
+      <img src="./assets/img/9.png" width="75%">
+      <br>
+      <p>🏍️ синхронизация логина между вкладками</p>
+      <img src="./assets/img/10.png" width="75%">
+      <br>
+      <p>🏍️ синхронизация обновлений профиля</p>
+      <img src="./assets/img/11.png" width="75%">
+      <br>
+      <p>
+        🏍️ наша корзина будет актуальной даже при одновременной работе с ней в
+        разных браузерах и на разных устройствах
+      </p>
+      <img src="./assets/img/12.png" width="75%">
+      <br>
+      <p>
+        🏍️ хранение даже анонимного токена, чтобы пользователь всегда мог
+        вернуться к своей корзине
+      </p>
+      <img src="./assets/img/13.png" width="75%">
+      <br>
+      <p>🏍️ уникальный url для каждой комбинации фильтров в каталоге</p>
+      <img src="./assets/img/14.png" width="75%">
+    </div>
+    <div class="card">
+      <h2>Александр</h2>
+      <img src="./assets/img/15.jpg" width="40%">
+      <p>🏍️ настроил репозиторий и автоматический деплой на netlify</p>
+      <p>
+        🏍️ для человека, отвечавшего за package-lock.json, миллион строк — не
+        предел
+      </p>
+      <p>🏍️ замокает всё и всегда пояснит вам за unit-тесты</p>
+      <p>🏍️ делал страницу каталога с фильтрами и поиском (с дебаунсингом!)</p>
+      <p>
+        🏍️ знает всё о формах и их валидации, ведь именно он отвечал за страницу
+        регистрации
+      </p>
+      <p>🏍️ оформил красивые главную страницу и 404</p>
+    </div>
+    <div class="card">
+      <h2>Милена</h2>
+      <img src="./assets/img/16.jpg" width="40%">
+      <p>🏍️ специалист по канбан-доскам и другим страшным словам</p>
+      <p>
+        🏍️ после того, как не испугалась интерфейса коммерс тулза для загрузки
+        товаров, её начали бояться все остальные
+      </p>
+      <p>
+        🏍️ делает так, чтобы у пользователя всегда была корзина, даже если тот
+        её только что удалил
+      </p>
+      <p>
+        🏍️ красивые карусельки из фото, ховеры и рандмно меняющиеся фоны
+        существуют в проекте исключительно благодаря ей
+      </p>
+      <p>🏍️ делала страницы логина, товаров и о команде</p>
+      <p>🏍️ единственная, кто разбирается, что наш магазин вообще продаёт</p>
+    </div>
+    <div class="card">
+      <h2>Светлана</h2>
+      <img src="./assets/img/17.png" width="40%">
+      <p>
+        🏍️ считает, что главная суть этого таска — сделать так, чтобы всё во
+        всех вкладках всегда было синхронизировано
+      </p>
+      <p>🏍️ пояснит за все виды токенов и креденшиал флоу</p>
+      <p>
+        🏍️ за время таска узнала про промокоды больше, чем за всё время ловли
+        скидок на маркет-плейсах
+      </p>
+      <p>
+        🏍️ делала страницу профиля только для того, чтобы писать версии в
+        сторадж
+      </p>
+      <p>
+        🏍️ когда во время работы над страницей корзины узнала про возможности
+        рефетча, начала его тайно подбрасывать во все чужие хуки
+      </p>
+      <p>
+        🏍️ для значка корзинки в шапке не удержалась и снова использовала
+        любимый сторадж
+      </p>
+    </div>
+    <div class="card">
+      <p>студенты спят, таски двужутся</p>
+      <img src="./assets/img/25.png" width="75%">
+      <br>
+      <img src="./assets/img/26.png" width="75%">
+      <br>
+      <img src="./assets/img/27.png" width="75%">
+      <br>
+      <img src="./assets/img/28.png" width="75%">
+      <br>
+      <img src="./assets/img/44.png" width="75%">
+      <br>
+      <img src="./assets/img/45.png" width="75%">
+      <br>
+      <img src="./assets/img/46.png" width="75%">
+    </div>
+    <div class="card">
+      <p>сколько ни переписывайся, а поорать как-то надёжнее будет</p>
+      <img src="./assets/img/31.png" width="75%">
+      <br>
+      <img src="./assets/img/32.png" width="75%">
+      <br>
+      <img src="./assets/img/33.png" width="75%">
+      <br>
+      <img src="./assets/img/34.png" width="75%">
+    </div>
+    <div class="card">
+      <p>не хочешь быть токарем — будешь пекарем</p>
+      <img src="./assets/img/35.png" width="75%">
+      <br>
+      <img src="./assets/img/36.png" width="75%">
+      <br>
+      <img src="./assets/img/37.png" width="75%">
+      <br>
+      <img src="./assets/img/38.png" width="75%">
+      <br>
+      <img src="./assets/img/39.png" width="75%">
+      <br>
+      <img src="./assets/img/40.png" width="75%">
+      <br>
+      <img src="./assets/img/41.png" width="75%">
+    </div>
+    <div class="card">
+      <p>люди делятся на практиков и теоретиков...</p>
+      <img src="./assets/img/18.png" width="75%">
+    </div>
+    <div class="card">
+      <p>критиковать — не работать</p>
+      <img src="./assets/img/19.png" width="75%">
+      <br>
+      <img src="./assets/img/20.png" width="75%">
+      <br>
+      <img src="./assets/img/21.png" width="75%">
+      <br>
+      <img src="./assets/img/22.png" width="75%">
+      <br>
+      <img src="./assets/img/23.png" width="75%">
+      <br>
+      <img src="./assets/img/24.png" width="75%">
+      <br>
+      <img src="./assets/img/29.png" width="75%">
+      <br>
+      <img src="./assets/img/30.png" width="75%">
+    </div>
+    <div class="card">
+      <p>если вы читаете инструкцию, значит, вы уже всё сломали</p>
+      <img src="./assets/img/42.png" width="75%">
+    </div>
+    <div class="card">
+      <p>чем больше умных слов в резюме — тем дольше его писали</p>
+      <img src="./assets/img/43.png" width="75%">
+    </div>
+    <div class="card">
+      <p>
+        и главный вывод этого таска... чем больше времени до дедлайна — тем
+        дольше можно ныть и прокрастинировать!
+      </p>
+      <img src="./assets/img/47.png" width="75%">
+    </div>
+    <h3>Всем спасибо за внимание!</h3>
   </body>
 </html>
