@@ -1,0 +1,821 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New York City — Шапка форума</title>
+    <style>
+        :root {
+            --bg-dark: #0a0a0f;
+            --bg-panel: #111118;
+            --neon-blue: #4da8da;
+            --neon-cyan: #00e5ff;
+            --neon-pink: #ff2d78;
+            --neon-yellow: #ffd740;
+            --bright-coral: #ff5e5b;
+            --light-grey: #b0b0b0;
+            --text-light: #e0e0e0;
+            --text-muted: #999;
+            --border-subtle: rgba(255, 255, 255, 0.08);
+            --glass-bg: rgba(20, 20, 30, 0.75);
+            --glass-border: rgba(255, 255, 255, 0.12);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #050510;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            font-family: 'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* ================== ОСНОВНОЙ КОНТЕЙНЕР ШАПКИ ================== */
+        .header-wrapper {
+            width: 1080px;
+            height: 350px;
+            position: relative;
+            overflow: hidden;
+            border-radius: 18px;
+            background: linear-gradient(180deg,
+                    #0b0b18 0%,
+                    #0d1020 25%,
+                    #0f1225 45%,
+                    #111328 65%,
+                    #0e1124 100%);
+            box-shadow:
+                0 8px 40px rgba(0, 0, 0, 0.6),
+                0 0 0 1px rgba(255, 255, 255, 0.06),
+                inset 0 1px 0 rgba(255, 255, 255, 0.03);
+            user-select: none;
+        }
+
+        /* ================== ЗВЁЗДЫ / ЧАСТИЦЫ ================== */
+        .stars-container {
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+            z-index: 0;
+        }
+        .star {
+            position: absolute;
+            background: white;
+            border-radius: 50%;
+            animation: twinkle var(--dur) ease-in-out infinite;
+            animation-delay: var(--delay);
+            opacity: 0;
+        }
+        @keyframes twinkle {
+            0%,
+            100% {
+                opacity: 0.2;
+                transform: scale(1);
+            }
+            25% {
+                opacity: 0.9;
+                transform: scale(1.6);
+            }
+            50% {
+                opacity: 0.35;
+                transform: scale(0.8);
+            }
+            75% {
+                opacity: 0.7;
+                transform: scale(1.3);
+            }
+        }
+
+        /* ================== СИЛУЭТЫ ЗДАНИЙ ================== */
+        .skyline {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 180px;
+            pointer-events: none;
+            z-index: 0;
+        }
+        .building {
+            position: absolute;
+            bottom: 0;
+            background: linear-gradient(180deg,
+                    rgba(15, 17, 35, 0.95) 0%,
+                    rgba(10, 10, 22, 0.98) 100%);
+            border-radius: 3px 3px 0 0;
+            box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.4);
+        }
+        .building::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: rgba(255, 255, 255, 0.06);
+            border-radius: 3px 3px 0 0;
+        }
+        /* Окна на зданиях */
+        .window-dots {
+            position: absolute;
+            top: 8px;
+            left: 4px;
+            right: 4px;
+            bottom: 8px;
+            display: flex;
+            flex-wrap: wrap;
+            align-content: flex-start;
+            gap: 3px 4px;
+            justify-content: center;
+            pointer-events: none;
+        }
+        .window-dot {
+            width: 3px;
+            height: 4px;
+            background: #ffd740;
+            border-radius: 0.5px;
+            opacity: 0;
+            animation: windowGlow var(--wdur) ease-in-out infinite;
+            animation-delay: var(--wdelay);
+            box-shadow: 0 0 3px #ffd74066;
+        }
+        @keyframes windowGlow {
+            0%,
+            100% {
+                opacity: 0.25;
+            }
+            50% {
+                opacity: 0.85;
+            }
+        }
+
+        /* ================== ЛУНА ================== */
+        .moon {
+            position: absolute;
+            top: 28px;
+            right: 80px;
+            width: 52px;
+            height: 52px;
+            background: radial-gradient(circle at 35% 35%, #ffe9c8 0%, #ffd89b 40%, #ffb347 100%);
+            border-radius: 50%;
+            z-index: 0;
+            pointer-events: none;
+            box-shadow:
+                0 0 40px rgba(255, 200, 100, 0.35),
+                0 0 90px rgba(255, 180, 60, 0.2),
+                0 0 140px rgba(255, 160, 40, 0.1);
+            animation: moonGlow 4s ease-in-out infinite;
+        }
+        @keyframes moonGlow {
+            0%,
+            100% {
+                box-shadow: 0 0 40px rgba(255, 200, 100, 0.35), 0 0 90px rgba(255, 180, 60, 0.2), 0 0 140px rgba(255, 160, 40, 0.1);
+            }
+            50% {
+                box-shadow: 0 0 55px rgba(255, 210, 120, 0.45), 0 0 110px rgba(255, 190, 70, 0.28), 0 0 160px rgba(255, 170, 50, 0.16);
+            }
+        }
+
+        /* ================== НАЗВАНИЕ "NEW YORK CITY" ================== */
+        .title-block {
+            position: absolute;
+            top: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 3;
+            text-align: center;
+            pointer-events: none;
+        }
+        .main-title {
+            font-family: 'Bebas Neue', 'Oswald', 'Impact', sans-serif;
+            font-size: 68px;
+            font-weight: 700;
+            letter-spacing: 8px;
+            color: #fff;
+            text-transform: uppercase;
+            line-height: 1;
+            position: relative;
+            display: inline-block;
+            /* Неоновая многослойная тень */
+            text-shadow:
+                0 0 7px #fff,
+                0 0 12px rgba(255, 255, 255, 0.7),
+                0 0 25px var(--neon-cyan),
+                0 0 50px var(--neon-cyan),
+                0 0 80px var(--neon-blue),
+                0 0 120px var(--neon-blue),
+                0 0 160px rgba(0, 180, 255, 0.5);
+            animation: neonFlicker 5s infinite alternate, titleFloat 6s ease-in-out infinite;
+        }
+        @keyframes neonFlicker {
+            0%,
+            19%,
+            21%,
+            23%,
+            25%,
+            54%,
+            56%,
+            100% {
+                text-shadow:
+                    0 0 7px #fff,
+                    0 0 12px rgba(255, 255, 255, 0.7),
+                    0 0 25px var(--neon-cyan),
+                    0 0 50px var(--neon-cyan),
+                    0 0 80px var(--neon-blue),
+                    0 0 120px var(--neon-blue),
+                    0 0 160px rgba(0, 180, 255, 0.5);
+                opacity: 1;
+            }
+            20%,
+            24%,
+            55% {
+                text-shadow:
+                    0 0 4px #fff,
+                    0 0 8px rgba(255, 255, 255, 0.5),
+                    0 0 18px var(--neon-cyan),
+                    0 0 35px var(--neon-cyan),
+                    0 0 55px var(--neon-blue),
+                    0 0 85px var(--neon-blue);
+                opacity: 0.85;
+            }
+        }
+        @keyframes titleFloat {
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-6px);
+            }
+        }
+        .subtitle {
+            font-family: 'Inter', sans-serif;
+            font-size: 13px;
+            letter-spacing: 6px;
+            text-transform: uppercase;
+            color: rgba(255, 255, 255, 0.6);
+            margin-top: 5px;
+            text-shadow: 0 0 8px rgba(255, 255, 255, 0.25);
+            animation: subtitlePulse 3s ease-in-out infinite;
+        }
+        @keyframes subtitlePulse {
+            0%,
+            100% {
+                opacity: 0.55;
+            }
+            50% {
+                opacity: 0.9;
+            }
+        }
+
+        /* ================== БЛОК ССЫЛОК ================== */
+        #toff-header-links {
+            position: absolute;
+            top: 22px;
+            right: 30px;
+            z-index: 5;
+            display: flex;
+            gap: 6px;
+            flex-wrap: wrap;
+            justify-content: flex-end;
+            max-width: 440px;
+        }
+        #toff-header-links a {
+            display: inline-block;
+            padding: 7px 14px;
+            font-size: 11.5px;
+            font-weight: 500;
+            letter-spacing: 0.8px;
+            text-transform: uppercase;
+            text-decoration: none;
+            color: #ccc;
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: 20px;
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            transition: all 0.3s ease;
+            white-space: nowrap;
+            position: relative;
+            overflow: hidden;
+        }
+        #toff-header-links a::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: 20px;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.06) 0%, transparent 50%);
+            pointer-events: none;
+        }
+        #toff-header-links a:hover {
+            color: #fff;
+            background: rgba(30, 30, 50, 0.85);
+            border-color: rgba(255, 255, 255, 0.3);
+            box-shadow: 0 0 18px rgba(100, 180, 255, 0.25), 0 0 40px rgba(100, 180, 255, 0.08);
+            transform: translateY(-2px);
+        }
+        #toff-header-links a:active {
+            transform: scale(0.96);
+            transition: transform 0.1s ease;
+        }
+
+        /* ================== ПЛЕЕР ================== */
+        #header-player {
+            position: absolute;
+            bottom: 20px;
+            left: 28px;
+            z-index: 5;
+            width: 520px;
+        }
+        #header-player-ready {
+            display: flex !important;
+            align-items: center;
+            gap: 12px;
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: 30px;
+            padding: 10px 18px;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.35);
+            flex-wrap: nowrap;
+        }
+        #nyc-radio {
+            font-family: 'Bebas Neue', 'Oswald', sans-serif;
+            font-size: 22px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            color: #fff;
+            margin: 0;
+            white-space: nowrap;
+            text-shadow: 0 0 8px var(--neon-pink), 0 0 20px rgba(255, 45, 120, 0.5);
+            animation: radioGlow 2s ease-in-out infinite;
+            flex-shrink: 0;
+        }
+        @keyframes radioGlow {
+            0%,
+            100% {
+                text-shadow: 0 0 8px var(--neon-pink), 0 0 20px rgba(255, 45, 120, 0.5);
+            }
+            50% {
+                text-shadow: 0 0 14px var(--neon-pink), 0 0 32px rgba(255, 45, 120, 0.75), 0 0 50px rgba(255, 45, 120, 0.3);
+            }
+        }
+        #nyc-radio span {
+            color: var(--neon-pink);
+        }
+        #header-player-btn {
+            width: 34px;
+            height: 34px;
+            border-radius: 50%;
+            border: 2px solid rgba(255, 255, 255, 0.5);
+            background: rgba(255, 255, 255, 0.07);
+            cursor: pointer;
+            position: relative;
+            flex-shrink: 0;
+            transition: all 0.25s ease;
+        }
+        #header-player-btn:hover {
+            border-color: #fff;
+            background: rgba(255, 255, 255, 0.15);
+            box-shadow: 0 0 16px rgba(255, 255, 255, 0.2);
+        }
+        /* Иконка Play/Pause через псевдоэлемент */
+        #header-player-btn::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 55%;
+            transform: translate(-50%, -50%);
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 8px 0 8px 14px;
+            border-color: transparent transparent transparent #fff;
+            transition: all 0.2s ease;
+        }
+        /* Когда играет — показываем паузу (две полоски) — переключение через JS-класс, базово play */
+        #header-player-btn.playing::after {
+            border-width: 0;
+            width: 10px;
+            height: 14px;
+            background: transparent;
+            box-shadow:
+                -3.5px 0 0 #fff,
+                3.5px 0 0 #fff;
+            border: none;
+            border-radius: 0;
+        }
+        #header-audio-progress {
+            -webkit-appearance: none;
+            appearance: none;
+            flex: 1;
+            min-width: 80px;
+            height: 5px;
+            border-radius: 3px;
+            background: rgba(255, 255, 255, 0.2);
+            outline: none;
+            cursor: pointer;
+            position: relative;
+            z-index: 2;
+        }
+        #header-audio-progress::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            background: #fff;
+            cursor: pointer;
+            border: 2px solid var(--neon-pink);
+            box-shadow: 0 0 10px var(--neon-pink);
+            transition: box-shadow 0.2s;
+        }
+        #header-audio-progress::-webkit-slider-thumb:hover {
+            box-shadow: 0 0 20px var(--neon-pink), 0 0 30px rgba(255, 45, 120, 0.6);
+        }
+        #header-audio-progress-color {
+            display: none;
+            /* Прогресс будет раскрашиваться через JS, здесь скрыт */
+        }
+        #header-audio-volume {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            border: 1.5px solid rgba(255, 255, 255, 0.45);
+            background: rgba(255, 255, 255, 0.06);
+            cursor: pointer;
+            position: relative;
+            flex-shrink: 0;
+            transition: all 0.25s ease;
+        }
+        #header-audio-volume:hover {
+            border-color: #fff;
+            background: rgba(255, 255, 255, 0.14);
+            box-shadow: 0 0 12px rgba(255, 255, 255, 0.18);
+        }
+        /* Иконка динамика */
+        #header-audio-volume::after {
+            content: '🔊';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 13px;
+            pointer-events: none;
+        }
+        #player__volume-bar,
+        #player__volume-bar-color {
+            display: none;
+        }
+        #header-player-not-ready {
+            display: none;
+        }
+
+        /* ================== ТАКСИ (декор) ================== */
+        .taxi-icon {
+            position: absolute;
+            bottom: 22px;
+            right: 55px;
+            z-index: 2;
+            pointer-events: none;
+            font-size: 38px;
+            animation: taxiBounce 2.5s ease-in-out infinite;
+            filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.4));
+        }
+        @keyframes taxiBounce {
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+            30% {
+                transform: translateY(-8px);
+            }
+            50% {
+                transform: translateY(0);
+            }
+            70% {
+                transform: translateY(-4px);
+            }
+            85% {
+                transform: translateY(0);
+            }
+        }
+        /* Светящийся след */
+        .taxi-light-streak {
+            position: absolute;
+            bottom: 16px;
+            right: 80px;
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, #ffd74088, #ffd740, #ffd74088, transparent);
+            border-radius: 50%;
+            z-index: 1;
+            pointer-events: none;
+            animation: streakPulse 1.8s ease-in-out infinite;
+        }
+        @keyframes streakPulse {
+            0%,
+            100% {
+                opacity: 0.5;
+                transform: scaleX(1);
+            }
+            50% {
+                opacity: 0.9;
+                transform: scaleX(1.4);
+            }
+        }
+
+        /* ================== АДАПТИВНЫЙ ФОЛБЭК (если ширина меньше — скролл) ================== */
+        @media (max-width: 1100px) {
+            .header-wrapper {
+                width: 100%;
+                border-radius: 0;
+                overflow-x: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ================== ШАПКА ФОРУМА ================== -->
+    <div class="header-wrapper">
+
+        <!-- Звёзды -->
+        <div class="stars-container" id="starsContainer"></div>
+
+        <!-- Луна -->
+        <div class="moon"></div>
+
+        <!-- Силуэты зданий -->
+        <div class="skyline">
+            <!-- Здание 1 -->
+            <div class="building" style="left: 2%; width: 55px; height: 130px;">
+                <div class="window-dots" id="wd1"></div>
+            </div>
+            <!-- Здание 2 (высокое) -->
+            <div class="building" style="left: 8%; width: 42px; height: 165px;">
+                <div class="window-dots" id="wd2"></div>
+            </div>
+            <!-- Здание 3 -->
+            <div class="building" style="left: 13%; width: 60px; height: 100px;">
+                <div class="window-dots" id="wd3"></div>
+            </div>
+            <!-- Эмпайр-стейт (высокий шпиль) -->
+            <div class="building" style="left: 20%; width: 38px; height: 175px; border-radius: 2px 2px 0 0;">
+                <div style="position:absolute;top:-22px;left:50%;transform:translateX(-50%);width:0;height:0;border-left:8px solid transparent;border-right:8px solid transparent;border-bottom:22px solid rgba(15,17,35,0.95);"></div>
+                <div class="window-dots" id="wd4"></div>
+            </div>
+            <!-- Здание 5 -->
+            <div class="building" style="left: 25%; width: 50px; height: 120px;">
+                <div class="window-dots" id="wd5"></div>
+            </div>
+            <!-- Здание 6 -->
+            <div class="building" style="left: 31%; width: 44px; height: 145px;">
+                <div class="window-dots" id="wd6"></div>
+            </div>
+            <!-- Здание 7 -->
+            <div class="building" style="left: 36%; width: 58px; height: 95px;">
+                <div class="window-dots" id="wd7"></div>
+            </div>
+            <!-- Здание 8 -->
+            <div class="building" style="left: 43%; width: 35px; height: 155px;">
+                <div class="window-dots" id="wd8"></div>
+            </div>
+            <!-- Здание 9 -->
+            <div class="building" style="left: 47%; width: 50px; height: 110px;">
+                <div class="window-dots" id="wd9"></div>
+            </div>
+            <!-- Здание 10 -->
+            <div class="building" style="left: 53%; width: 40px; height: 140px;">
+                <div class="window-dots" id="wd10"></div>
+            </div>
+            <!-- Здание 11 -->
+            <div class="building" style="left: 58%; width: 55px; height: 105px;">
+                <div class="window-dots" id="wd11"></div>
+            </div>
+            <!-- Здание 12 -->
+            <div class="building" style="left: 65%; width: 38px; height: 160px;">
+                <div class="window-dots" id="wd12"></div>
+            </div>
+            <!-- Здание 13 -->
+            <div class="building" style="left: 70%; width: 48px; height: 125px;">
+                <div class="window-dots" id="wd13"></div>
+            </div>
+            <!-- Здание 14 -->
+            <div class="building" style="left: 76%; width: 42px; height: 150px;">
+                <div class="window-dots" id="wd14"></div>
+            </div>
+            <!-- Здание 15 -->
+            <div class="building" style="left: 81%; width: 52px; height: 100px;">
+                <div class="window-dots" id="wd15"></div>
+            </div>
+            <!-- Здание 16 -->
+            <div class="building" style="left: 87%; width: 36px; height: 135px;">
+                <div class="window-dots" id="wd16"></div>
+            </div>
+            <!-- Здание 17 -->
+            <div class="building" style="left: 92%; width: 55px; height: 115px;">
+                <div class="window-dots" id="wd17"></div>
+            </div>
+            <!-- Здание 18 -->
+            <div class="building" style="left: 97%; width: 30px; height: 90px;">
+                <div class="window-dots" id="wd18"></div>
+            </div>
+        </div>
+
+        <!-- Название -->
+        <div class="title-block">
+            <div class="main-title">New York City</div>
+            <div class="subtitle">Roleplay Forum</div>
+        </div>
+
+        <!-- Блок ссылок -->
+        <div id="toff-header-links">
+            <a href="https://nyc.f-rpg.me/viewtopic.php?id=55">гостевая</a>
+            <a href="https://nyc.f-rpg.me/viewtopic.php?id=36">правила</a>
+            <a href="https://nyc.f-rpg.me/viewtopic.php?id=59">внешности</a>
+            <a href="https://nyc.f-rpg.me/viewtopic.php?id=50">банк</a>
+            <a href="https://nyc.f-rpg.me/viewtopic.php?id=105">биржа труда</a>
+            <a href="https://nyc.f-rpg.me/viewtopic.php?id=1162">вопросы к амс</a>
+        </div>
+
+        <!-- Такси (декор) -->
+        <div class="taxi-icon">🚕</div>
+        <div class="taxi-light-streak"></div>
+
+        <!-- Плеер -->
+        <div id="header-player">
+            <div id="header-player-ready" style="display: flex;">
+                <p id="nyc-radio">NYC <span>Radio</span></p>
+                <button id="header-player-btn" style="cursor: pointer;"></button>
+                <audio src="https://forumstatic.ru/files/001c/2b/3d/46937.mp3" id="header-audio" preload="auto"></audio>
+                <input type="range" value="0" id="header-audio-progress" max="233.5869387755102">
+                <div id="header-audio-progress-color"></div>
+                <button id="header-audio-volume"></button>
+                <input type="range" value="0" id="player__volume-bar" max="100" min="0" style="display: none;">
+                <div id="player__volume-bar-color" style="background: linear-gradient(to right, var(--light-grey) 0%, var(--light-grey) 49.9999%, var(--bright-coral) 50.0001%, var(--bright-coral) 100%); display: none;"></div>
+            </div>
+            <div id="header-player-not-ready" style="display: none;">
+                <div class="loading"></div>
+                <p>аудио загружается...</p>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        // ================== ГЕНЕРАЦИЯ ЗВЁЗД ==================
+        (function() {
+            const container = document.getElementById('starsContainer');
+            const starCount = 70;
+            const fragment = document.createDocumentFragment();
+            for (let i = 0; i < starCount; i++) {
+                const star = document.createElement('div');
+                star.classList.add('star');
+                const size = Math.random() * 2.5 + 1;
+                star.style.width = size + 'px';
+                star.style.height = size + 'px';
+                star.style.left = Math.random() * 100 + '%';
+                star.style.top = Math.random() * 55 + '%'; // верхняя половина
+                star.style.setProperty('--dur', (Math.random() * 2.5 + 1.8) + 's');
+                star.style.setProperty('--delay', (Math.random() * 5) + 's');
+                fragment.appendChild(star);
+            }
+            container.appendChild(fragment);
+        })();
+
+        // ================== ГЕНЕРАЦИЯ ОКОН НА ЗДАНИЯХ ==================
+        (function() {
+            for (let i = 1; i <= 18; i++) {
+                const wd = document.getElementById('wd' + i);
+                if (!wd) continue;
+                const rows = Math.floor(Math.random() * 6) + 4;
+                const cols = Math.floor(Math.random() * 4) + 2;
+                const total = rows * cols;
+                const frag = document.createDocumentFragment();
+                for (let j = 0; j < total; j++) {
+                    const dot = document.createElement('div');
+                    dot.classList.add('window-dot');
+                    dot.style.setProperty('--wdur', (Math.random() * 3 + 2) + 's');
+                    dot.style.setProperty('--wdelay', (Math.random() * 4) + 's');
+                    frag.appendChild(dot);
+                }
+                wd.appendChild(frag);
+            }
+        })();
+
+        // ================== БАЗОВЫЙ JS ДЛЯ ПЛЕЕРА (МИНИМАЛЬНЫЙ) ==================
+        (function() {
+            const audio = document.getElementById('header-audio');
+            const playBtn = document.getElementById('header-player-btn');
+            const progressBar = document.getElementById('header-audio-progress');
+            const volumeBtn = document.getElementById('header-audio-volume');
+            const volumeBar = document.getElementById('player__volume-bar');
+            const progressColor = document.getElementById('header-audio-progress-color');
+            const volumeBarColor = document.getElementById('player__volume-bar-color');
+
+            let isPlaying = false;
+            let volumeBeforeMute = 70;
+            let isMuted = false;
+
+            // Начальная громкость
+            audio.volume = 0.7;
+            if (volumeBar) volumeBar.value = 70;
+
+            // Play / Pause
+            playBtn.addEventListener('click', () => {
+                if (isPlaying) {
+                    audio.pause();
+                    playBtn.classList.remove('playing');
+                } else {
+                    audio.play().catch(() => {});
+                    playBtn.classList.add('playing');
+                }
+                isPlaying = !isPlaying;
+            });
+
+            // Обновление прогресса
+            audio.addEventListener('timeupdate', () => {
+                if (audio.duration && isFinite(audio.duration)) {
+                    const pct = (audio.currentTime / audio.duration) * 100;
+                    progressBar.value = audio.currentTime;
+                    if (progressBar.max !== audio.duration) {
+                        progressBar.max = audio.duration;
+                    }
+                    // Обновляем цвет прогресса
+                    if (progressColor) {
+                        progressColor.style.display = 'block';
+                        progressColor.style.position = 'absolute';
+                        progressColor.style.height = '5px';
+                        progressColor.style.borderRadius = '3px';
+                        progressColor.style.background = `linear-gradient(to right, var(--bright-coral) ${pct}%, rgba(255,255,255,0.2) ${pct}%)`;
+                        progressColor.style.top = '50%';
+                        progressColor.style.transform = 'translateY(-50%)';
+                        progressColor.style.pointerEvents = 'none';
+                        progressColor.style.zIndex = '1';
+                        // Позиционируем под progress bar
+                        const rect = progressBar.getBoundingClientRect();
+                        const parentRect = progressBar.parentElement.getBoundingClientRect();
+                        progressColor.style.left = (rect.left - parentRect.left) + 'px';
+                        progressColor.style.width = rect.width + 'px';
+                    }
+                }
+            });
+
+            // Перемотка
+            progressBar.addEventListener('input', () => {
+                audio.currentTime = progressBar.value;
+            });
+
+            // Громкость
+            volumeBtn.addEventListener('click', () => {
+                if (isMuted) {
+                    audio.volume = volumeBeforeMute / 100;
+                    if (volumeBar) volumeBar.value = volumeBeforeMute;
+                    volumeBtn.style.opacity = '1';
+                    isMuted = false;
+                } else {
+                    volumeBeforeMute = Math.round(audio.volume * 100);
+                    audio.volume = 0;
+                    if (volumeBar) volumeBar.value = 0;
+                    volumeBtn.style.opacity = '0.5';
+                    isMuted = true;
+                }
+            });
+
+            if (volumeBar) {
+                volumeBar.addEventListener('input', () => {
+                    audio.volume = volumeBar.value / 100;
+                    if (audio.volume === 0) {
+                        isMuted = true;
+                        volumeBtn.style.opacity = '0.5';
+                    } else {
+                        isMuted = false;
+                        volumeBtn.style.opacity = '1';
+                    }
+                });
+            }
+
+            // При окончании трека
+            audio.addEventListener('ended', () => {
+                playBtn.classList.remove('playing');
+                isPlaying = false;
+                progressBar.value = 0;
+            });
+
+            // При загрузке
+            audio.addEventListener('loadeddata', () => {
+                progressBar.max = audio.duration;
+            });
+        })();
+    </script>
+
+</body>
+</html>
